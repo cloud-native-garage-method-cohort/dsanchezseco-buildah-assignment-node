@@ -54,12 +54,15 @@ spec:
           value: "$(params.image-repo)"
         - name: runtime
           value: "js"
+      workspaces:
+        - name: source
+          workspace: pipeline-shared-data
     - name: deploy
       params:
-        - name: app-name
-          value: "$(params.app-name)"
         - name: app-namespace
           value: "$(context.pipelineRun.namespace)"
+        - name: manifest
+          value: "$(tasks.create-configuration.results.manifest)"
       runAfter:
         - create-configuration
       taskRef:

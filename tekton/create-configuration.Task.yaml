@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: create-configuration
+  name: kustomize
 spec:
   params:
     - name: app-name
@@ -14,6 +14,8 @@ spec:
       description: Description of the runtime engine (js, Java, Etc)
     - name: source-repo
       description: Source git repository
+    - name: app-namespace
+      description: namespace for the deployment
   results:
     - name: manifest
       description: The path to the yaml file
