@@ -6,6 +6,7 @@ COPY package*.json .
 
 RUN npm ci
 
+COPY bin bin/
 COPY * .
 
 EXPOSE 3000
