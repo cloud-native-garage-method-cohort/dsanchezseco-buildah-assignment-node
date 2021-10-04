@@ -9,6 +9,8 @@ spec:
       value: https://github.com/cloud-native-garage-method-cohort/dsanchezseco-buildah-assignment-node
     - name: image-repo
       value: quay.io/dsanchezseco-ibm/express-sample-app
+    - name: app-name
+      value: kustomized-app
   pipelineRef:
     name: nodejs
   workspaces:

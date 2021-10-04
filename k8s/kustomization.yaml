@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deployment.yaml
+- service.yaml
+images:
+- name: quay.io/upslope/express-sample-app
+  newName: quay.io/dsanchezseco/express-sample-app
+  newTag: f27b87ff8ceed4e9f3c3b4fc4f35521a8ac90c605902c980991d4b4c1189aa9c
+commonLabels:
+  app: express-sample-app
+  app.kubernetes.io/instance: express-sample-app
+  app.kubernetes.io/name: express-sample-app
